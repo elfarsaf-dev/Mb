@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>Keranjang - WARUNG SATE MBAH BIYONG</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b2b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#181111] dark:text-white pb-24">
+    <div class="max-w-md mx-auto min-h-screen bg-white dark:bg-background-dark shadow-xl">
+        <header class="sticky top-0 z-50 bg-white/95 dark:bg-background-dark/95 backdrop-blur-sm px-6 py-4 flex items-center gap-4 border-b border-gray-100 dark:border-white/10">
+            <button onclick="window.history.back()" class="p-1">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="text-xl font-bold">Keranjang Belanja</h1>
+        </header>
+
+        <main class="p-6">
+            <div id="cart-items-container" class="space-y-6">
+                <!-- Items will be injected here by cart.js -->
+                <div class="flex flex-col items-center justify-center py-20 text-gray-400">
+                    <span class="material-symbols-outlined text-6xl mb-4">shopping_cart</span>
+                    <p>Keranjang kamu masih kosong cuy</p>
+                    <button onclick="window.location.href='pesan.html'" class="mt-4 text-primary font-bold">Pesan Sekarang</button>
+                </div>
+            </div>
+
+            <div id="cart-summary" class="mt-10 pt-6 border-t border-gray-100 dark:border-white/10 hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-gray-500">Total Pembayaran</span>
+                    <span id="cart-page-total" class="text-2xl font-black text-primary">Rp 0</span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-primary text-white py-4 rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 active:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">send</span>
+                    Pesan via WhatsApp
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <nav class="fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-8 rounded-full bg-[#181111]/90 dark:bg-white/10 px-8 py-4 backdrop-blur-xl border border-white/10 shadow-2xl">
+        <button class="text-white/60" onclick="window.location.href='index.html'">
+            <span class="material-symbols-outlined">home</span>
+        </button>
+        <button class="text-white/60" onclick="window.location.href='pesan.html'">
+            <span class="material-symbols-outlined">restaurant</span>
+        </button>
+        <button class="text-primary">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">shopping_cart</span>
+        </button>
+        <button class="text-white/60" onclick="window.location.href='profile.html'">
+            <span class="material-symbols-outlined">person</span>
+        </button>
+    </nav>
+
+    <script src="cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCartPage();
+        });
+
+        function renderCartPage() {
+            const container = document.getElementById('cart-items-container');
+            const summary = document.getElementById('cart-summary');
+            const totalText = document.getElementById('cart-page-total');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="flex flex-col items-center justify-center py-20 text-gray-400">
+                        <span class="material-symbols-outlined text-6xl mb-4">shopping_cart</span>
+                        <p>Keranjang kamu masih kosong cuy</p>
+                        <button onclick="window.location.href='pesan.html'" class="mt-4 text-primary font-bold">Pesan Sekarang</button>
+                    </div>`;
+                summary.classList.add('hidden');
+                return;
+            }
+
+            summary.classList.remove('hidden');
+            let html = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                html += `
+                    <div class="flex gap-4 items-center">
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg">${item.name}</h3>
+                            <p class="text-primary font-bold">Rp ${item.price.toLocaleString('id-ID')}</p>
+                        </div>
+                        <div class="flex items-center gap-3 bg-background-light dark:bg-white/10 rounded-full px-3 py-1">
+                            <button onclick="updateQuantity('${item.id}', -1); renderCartPage();" class="size-8 rounded-full bg-white dark:bg-background-dark text-primary flex items-center justify-center shadow-sm">
+                                <span class="material-symbols-outlined text-sm">remove</span>
+                            </button>
+                            <span class="font-bold w-4 text-center">${item.quantity}</span>
+                            <button onclick="updateQuantity('${item.id}', 1); renderCartPage();" class="size-8 rounded-full bg-primary text-white flex items-center justify-center shadow-sm">
+                                <span class="material-symbols-outlined text-sm">add</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            totalText.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        function checkoutWhatsApp() {
+            const phoneNumber = "628123456789"; // Change to owner's number
+            let message = "Halo Mbah Biyong, saya mau pesan:\n\n";
+            let total = 0;
+            
+            cart.forEach(item => {
+                message += `• ${item.name} (${item.quantity}x) - Rp ${(item.price * item.quantity).toLocaleString('id-ID')}\n`;
+                total += item.price * item.quantity;
+            });
+            
+            message += `\n*Total: Rp ${total.toLocaleString('id-ID')}*`;
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
