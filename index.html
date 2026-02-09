@@ -62,12 +62,79 @@
 <span class="material-symbols-outlined">shopping_bag</span>
 <span class="shopping-bag-badge absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">0</span>
 </button>
-<button class="p-2 text-[#181111] dark:text-white">
+<button class="p-2 text-[#181111] dark:text-white" onclick="toggleMenu()">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </div>
 </header>
+
+<!-- Side Menu -->
+<div id="side-menu" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="toggleMenu()"></div>
+    <div class="absolute right-0 top-0 h-full w-64 bg-white dark:bg-background-dark shadow-2xl transition-transform duration-300 translate-x-full" id="menu-content">
+        <div class="flex flex-col h-full">
+            <div class="flex items-center justify-between p-6 border-b border-gray-100 dark:border-white/10">
+                <h2 class="text-xl font-bold">Menu</h2>
+                <button onclick="toggleMenu()" class="p-2">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="index.html" class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-primary">home</span>
+                            <span class="font-bold">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pesan.html" class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-primary">chat</span>
+                            <span class="font-bold">Pesan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-primary">favorite</span>
+                            <span class="font-bold">Favorit</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-primary">info</span>
+                            <span class="font-bold">Tentang</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-4 p-4 rounded-xl hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined text-primary">person</span>
+                            <span class="font-bold">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('side-menu');
+        const content = document.getElementById('menu-content');
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('translate-x-full');
+            }, 10);
+        } else {
+            content.classList.add('translate-x-full');
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 300);
+        }
+    }
+</script>
 <main>
 <!-- Hero Section -->
 <section class="@container">
