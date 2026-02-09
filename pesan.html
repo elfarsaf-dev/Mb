@@ -73,24 +73,24 @@
 <div class="mb-4">
 <label class="relative flex items-center w-full">
 <span class="absolute left-4 text-[#896161] dark:text-gray-400 material-symbols-outlined">search</span>
-<input class="w-full h-12 pl-12 pr-4 bg-background-light dark:bg-white/5 border-none rounded-xl text-base focus:ring-2 focus:ring-primary/20 placeholder:text-[#896161]/60" placeholder="Search for sate, sides, or drinks..." type="text"/>
+<input id="menu-search" class="w-full h-12 pl-12 pr-4 bg-background-light dark:bg-white/5 border-none rounded-xl text-base focus:ring-2 focus:ring-primary/20 placeholder:text-[#896161]/60" placeholder="Search for sate, sides, or drinks..." type="text"/>
 </label>
 </div>
 <!-- Horizontal Categories -->
 <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
-<button class="flex h-10 shrink-0 items-center justify-center rounded-xl bg-primary px-5 text-sm font-bold text-white shadow-lg shadow-primary/20">
+<button data-category="All" class="category-btn flex h-10 shrink-0 items-center justify-center rounded-xl bg-primary px-5 text-sm font-bold text-white shadow-lg shadow-primary/20">
                     All
                 </button>
-<button class="flex h-10 shrink-0 items-center justify-center rounded-xl bg-background-light dark:bg-white/10 px-5 text-sm font-medium hover:bg-primary/10 transition-colors">
+<button data-category="Sate Ayam" class="category-btn flex h-10 shrink-0 items-center justify-center rounded-xl bg-background-light dark:bg-white/10 px-5 text-sm font-medium hover:bg-primary/10 transition-colors">
                     Sate Ayam
                 </button>
-<button class="flex h-10 shrink-0 items-center justify-center rounded-xl bg-background-light dark:bg-white/10 px-5 text-sm font-medium hover:bg-primary/10 transition-colors">
+<button data-category="Sate Kambing" class="category-btn flex h-10 shrink-0 items-center justify-center rounded-xl bg-background-light dark:bg-white/10 px-5 text-sm font-medium hover:bg-primary/10 transition-colors">
                     Sate Kambing
                 </button>
-<button class="flex h-10 shrink-0 items-center justify-center rounded-xl bg-background-light dark:bg-white/10 px-5 text-sm font-medium hover:bg-primary/10 transition-colors">
+<button data-category="Side Dishes" class="category-btn flex h-10 shrink-0 items-center justify-center rounded-xl bg-background-light dark:bg-white/10 px-5 text-sm font-medium hover:bg-primary/10 transition-colors">
                     Side Dishes
                 </button>
-<button class="flex h-10 shrink-0 items-center justify-center rounded-xl bg-background-light dark:bg-white/10 px-5 text-sm font-medium hover:bg-primary/10 transition-colors">
+<button data-category="Drinks" class="category-btn flex h-10 shrink-0 items-center justify-center rounded-xl bg-background-light dark:bg-white/10 px-5 text-sm font-medium hover:bg-primary/10 transition-colors">
                     Drinks
                 </button>
 </div>
@@ -98,14 +98,14 @@
 <!-- Menu Sections -->
 <main class="px-4 pt-2">
 <!-- Category: Sate Ayam -->
-<section class="mb-8">
+<section class="menu-section mb-8" data-category="Sate Ayam">
 <div class="flex items-center justify-between mb-4">
 <h3 class="text-xl font-bold tracking-tight border-l-4 border-primary pl-3">Sate Ayam</h3>
 <span class="text-xs font-semibold text-primary">Signature</span>
 </div>
 <div class="grid grid-cols-1 gap-6">
 <!-- Item 1 -->
-<div class="flex gap-4 group">
+<div class="menu-item flex gap-4 group" data-name="Sate Ayam Madura">
 <div class="w-32 h-32 shrink-0 rounded-2xl bg-center bg-cover shadow-md group-hover:scale-105 transition-transform duration-300" data-alt="Traditional grilled chicken satay with peanut sauce" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjDY_EpIxlfJR_xephTjwBWBn9S_y72RAOzRn8hvxu31nOJgrK27S5_pfAR5dJ2X4Jxve5QjWW3s18GgJkR1jexOk8VJkTvHrn0fviF3ihk4Vr6crXpk6o6xu-jCKCgdZpyVsCfJgX1jXQz8t9zr8pnp7bBIHvJheyTftgno8HRle24fXRP-Map7PzSn4te4RJrN9X0lbS6kbb2niQua3Ry0N2mraOeSELXDMWeWsmHGuYRTGPn0xJ7p5iOEYigIL3yUvF0F9vBJI");'></div>
 <div class="flex flex-col justify-between py-1 flex-1">
 <div>
@@ -121,7 +121,7 @@
 </div>
 </div>
 <!-- Item 2 -->
-<div class="flex gap-4 group">
+<div class="menu-item flex gap-4 group" data-name="Sate Ayam Bumbu Kecap">
 <div class="w-32 h-32 shrink-0 rounded-2xl bg-center bg-cover shadow-md group-hover:scale-105 transition-transform duration-300" data-alt="Chicken satay with spicy kecap sauce" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGXLz0CquTqyIt1GLPq0rdUaSpwqsuEPHIoPP-qo4VlMa76kNWLswjDcVYmYempuPyGou0dET9Ov9GbQgOSEZhqUSeXpy_mvMtuy2NetcYGdB2E3ZFpgvKyU6LST_dXekxG0Fo8jiIkFQkBj8cPudNC21NBhnJ0HiPIHHg_timvfdDmQETlItq2jGCAKuRsgvvBEK2mM8gTuN3N81O8jyvxOGWsG9d4yuLUERXgbDflM_2jAZMrR9HPUWEA4SZYqdk5mw7iksv3co");'></div>
 <div class="flex flex-col justify-between py-1 flex-1">
 <div>
@@ -139,13 +139,13 @@
 </div>
 </section>
 <!-- Category: Sate Kambing -->
-<section class="mb-8">
+<section class="menu-section mb-8" data-category="Sate Kambing">
 <div class="flex items-center justify-between mb-4">
 <h3 class="text-xl font-bold tracking-tight border-l-4 border-primary pl-3">Sate Kambing</h3>
 </div>
 <div class="grid grid-cols-1 gap-6">
 <!-- Item 3 -->
-<div class="flex gap-4 group">
+<div class="menu-item flex gap-4 group" data-name="Sate Kambing Muda">
 <div class="w-32 h-32 shrink-0 rounded-2xl bg-center bg-cover shadow-md group-hover:scale-105 transition-transform duration-300" data-alt="Succulent lamb satay with sweet soy sauce" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxB08BXS4U2IDOvPZWs0q_6EDUUcjbWPCcwsZ_hmQcKgpr6eCNqoUmPDGvXzaGXXY09ENeei3kKXPh2NAopEQ4lWowjEFFjixvXDyyh_Jny3K6SiRQat0YQZMmyRK8NZzlyqfxrL5lLRA-oP6F2FT4FVDE11CvqnojlN9Z20HLXmZtsGxRlKn4BV3Uzu5LNBEdqCQTDH2tjgcXQuw6MIEr_vlzg8u_uYivfHqWvqU6hm-zxQCy9qARSwiUgovMOKD20dUnEP4ysWw");'></div>
 <div class="flex flex-col justify-between py-1 flex-1">
 <div>
@@ -169,13 +169,13 @@
 </div>
 </section>
 <!-- Category: Sides -->
-<section class="mb-8">
+<section class="menu-section mb-8" data-category="Side Dishes">
 <div class="flex items-center justify-between mb-4">
 <h3 class="text-xl font-bold tracking-tight border-l-4 border-primary pl-3">Side Dishes</h3>
 </div>
 <div class="grid grid-cols-2 gap-4">
 <!-- Item 4 -->
-<div class="flex flex-col gap-2">
+<div class="menu-item flex flex-col gap-2" data-name="Lontong">
 <div class="w-full aspect-square rounded-2xl bg-center bg-cover shadow-sm" data-alt="Wrapped lontong rice cake" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP5f082E3RWw9o-jiOvTQ6AJPIL6QqX1Vi6zB6qfvblvdcKW_maYb91KGBxCLhGDrniFa731NuWqY0CFsRQVOf1DFxM5GGvQuAj6QudaNSWjevEYxGP9uOYKgL9zlXJJR-cLuNd2EKFFqlbaCdEiOfaOI2SK1o-GU0AuPT_xNmIPCaDHQDvPPDhqHlXNpJqDCbNrMu77ZORgBQzpWg8ef0R-XdsWRIZQ3ciEg88OpvsLjPiH2T6mleO1DGs1tua8fJobpi02PjyF8");'></div>
 <div class="px-1">
 <h4 class="font-bold text-sm">Lontong</h4>
@@ -189,7 +189,7 @@
 </div>
 </div>
 <!-- Item 5 -->
-<div class="flex flex-col gap-2">
+<div class="menu-item flex flex-col gap-2" data-name="Nasi Putih">
 <div class="w-full aspect-square rounded-2xl bg-center bg-cover shadow-sm" data-alt="A bowl of white rice" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDN4ASbbNoM_iR5Vs_-pXtpyn59SYaTpuhQfLiKCeiKNrX3MsIOFnYTee-DyO93EVsuEF9EDV1J7wZ_h9PpME0Jg-KzJYyAj4wlwKg3oj_H55RxENtkaWPuUR02qDfEjsrlVqBwTP2ZpuD9-5dWATsQfrPwTkpnPrOnUmng4At1xpLymYLkUtbtaVibUrYrLzMPW2k1sI5pT4gJj5fk1hDzy1s4md6PGWJGlv7h8SeVqingLgcSHrkUSwvgs8cHK252vgCYU7hJiqw");'></div>
 <div class="px-1">
 <h4 class="font-bold text-sm">Nasi Putih</h4>

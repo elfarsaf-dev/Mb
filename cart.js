@@ -64,6 +64,58 @@ function updateCartUI() {
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     
+    // Search functionality
+    const searchInput = document.getElementById('menu-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const items = document.querySelectorAll('.menu-item');
+            items.forEach(item => {
+                const name = item.dataset.name.toLowerCase();
+                if (name.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Hide empty sections
+            document.querySelectorAll('.menu-section').forEach(section => {
+                const visibleItems = section.querySelectorAll('.menu-item[style="display: flex;"]');
+                if (visibleItems.length === 0 && query !== '') {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+        });
+    }
+
+    // Category filtering
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.category;
+            
+            // Update button styles
+            categoryBtns.forEach(b => {
+                b.classList.remove('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/20');
+                b.classList.add('bg-background-light', 'dark:bg-white/10', 'font-medium');
+            });
+            btn.classList.add('bg-primary', 'text-white', 'shadow-lg', 'shadow-primary/20');
+            btn.classList.remove('bg-background-light', 'dark:bg-white/10', 'font-medium');
+
+            const sections = document.querySelectorAll('.menu-section');
+            sections.forEach(section => {
+                if (category === 'All' || section.dataset.category === category) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    });
+
     // Global event listener for add buttons
     document.addEventListener('click', (e) => {
         const addBtn = e.target.closest('[data-add-to-cart]');
