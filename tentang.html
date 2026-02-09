@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tentang Kami - Warung Sate Mbah Biyong</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b2b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#181111] dark:text-white">
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-white/10">
+        <div class="flex items-center justify-between px-6 py-4">
+            <button onclick="history.back()" class="p-2">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <h1 class="text-lg font-extrabold tracking-tighter uppercase">Tentang Kami</h1>
+            <div class="w-10"></div>
+        </div>
+    </header>
+
+    <main class="px-6 py-8 space-y-8">
+        <section class="text-center">
+            <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="material-symbols-outlined text-primary text-5xl">restaurant_menu</span>
+            </div>
+            <h2 class="text-3xl font-black">Warung Sate <span class="text-primary">Mbah Biyong</span></h2>
+            <p class="text-gray-500 mt-2">Warisan Rasa Sejak 1982</p>
+        </section>
+
+        <section class="bg-white dark:bg-white/5 p-6 rounded-3xl shadow-sm">
+            <h3 class="text-xl font-bold mb-4">Cerita Kami</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Berawal dari sebuah gerobak sederhana di pinggir jalan Kaliwungu, Mbah Biyong mulai meracik resep sate kambing dan ayam yang kini melegenda. Rahasia kelezatan kami terletak pada pemilihan daging muda yang segar dan bumbu rempah warisan yang tetap dijaga keasliannya hingga hari ini.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-2 gap-4">
+            <div class="bg-white dark:bg-white/5 p-6 rounded-3xl text-center">
+                <span class="material-symbols-outlined text-primary text-3xl mb-2">workspace_premium</span>
+                <h4 class="font-bold">Kualitas</h4>
+                <p class="text-xs text-gray-500 mt-1">Daging Pilihan Terbaik</p>
+            </div>
+            <div class="bg-white dark:bg-white/5 p-6 rounded-3xl text-center">
+                <span class="material-symbols-outlined text-primary text-3xl mb-2">favorite</span>
+                <h4 class="font-bold">Tradisi</h4>
+                <p class="text-xs text-gray-500 mt-1">Resep Turun Temurun</p>
+            </div>
+        </section>
+
+        <section class="bg-primary text-white p-8 rounded-3xl">
+            <h3 class="text-xl font-bold mb-4">Lokasi Kami</h3>
+            <div class="space-y-4">
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined opacity-70">location_on</span>
+                    <div>
+                        <p class="font-bold text-sm">Kaliwungu Utama</p>
+                        <p class="text-xs opacity-80">Jl. Raya Kaliwungu No. 42, Semarang</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined opacity-70">call</span>
+                    <div>
+                        <p class="font-bold text-sm">Hubungi Kami</p>
+                        <p class="text-xs opacity-80">0812-3456-7890</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-8 rounded-full bg-[#181111]/90 dark:bg-white/10 px-8 py-4 backdrop-blur-xl border border-white/10 shadow-2xl">
+        <button class="text-white/60" onclick="window.location.href='index.html'">
+            <span class="material-symbols-outlined">home</span>
+        </button>
+        <button class="text-white/60" onclick="window.location.href='pesan.html'">
+            <span class="material-symbols-outlined">restaurant</span>
+        </button>
+        <button class="text-white/60" onclick="window.location.href='favorit.html'">
+            <span class="material-symbols-outlined">favorite</span>
+        </button>
+        <button class="text-white/60" onclick="window.location.href='profile.html'">
+            <span class="material-symbols-outlined">person</span>
+        </button>
+    </nav>
+</body>
+</html>
