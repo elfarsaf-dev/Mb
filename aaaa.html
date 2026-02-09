@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Warung Sate Mbah Biyong</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b2b",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#181111] dark:text-white transition-colors duration-300">
+<!-- Top Bar Navigation -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-white/10">
+<div class="flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary font-bold text-3xl">restaurant_menu</span>
+<h1 class="text-[#181111] dark:text-white text-lg font-extrabold tracking-tighter uppercase">Mbah Biyong</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-[#181111] dark:text-white">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">2</span>
+</button>
+<button class="p-2 text-[#181111] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="@container">
+<div class="relative w-full h-[85vh] @[480px]:h-[70vh] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Juicy grilled satay with smoke and fire flares" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPK7p14C1iMXveM6YWpDNLTCt_FwiUCDBXsoqMK_sV3PwjWfLmgcnUYWTDvlP_JxYYFJWkSz5AMU8TdDAlGomNdHI4rT4G_BmfK00gXNS-u9RAJXfr4auL8_wJfgHsTYt905kIc-ljnkjaUWQpPKaTO_qnIZFa3TvIbmc0VQERZiIEucxHFrRMR3itA-087oXk13BHW8U_0K7flVWjRwV2rGjSoEnJ-D9iprgJpG-b7CMH4pf790ptEggOeJ2bSq9zSmLNpCa3nhw');">
+</div>
+<div class="relative flex h-full flex-col items-center justify-center px-6 text-center">
+<div class="inline-block px-3 py-1 mb-4 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm">
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Since 1982</span>
+</div>
+<h2 class="text-white text-5xl font-extrabold leading-[1.1] tracking-tighter @[480px]:text-7xl mb-6">
+                        WARUNG SATE <br/> <span class="text-primary">MBAH BIYONG</span>
+</h2>
+<p class="text-gray-200 text-lg font-medium leading-relaxed max-w-md mb-10">
+                        Experience the legendary charcoal-grilled perfection of traditional Javanese sate.
+                    </p>
+<div class="flex flex-col w-full gap-4 px-4 @[480px]:flex-row @[480px]:justify-center">
+<button class="flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-5 text-lg font-bold text-white shadow-lg shadow-primary/30 active:scale-95 transition-all">
+                            Order Now
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-xl bg-white/10 border border-white/20 backdrop-blur-md px-8 py-5 text-lg font-bold text-white active:scale-95 transition-all">
+                            View Menu
+                        </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-white/50">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Quick Categories -->
+<section class="py-8 bg-white dark:bg-background-dark">
+<div class="flex gap-4 overflow-x-auto px-6 no-scrollbar">
+<button class="flex shrink-0 items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-white">
+<span class="material-symbols-outlined text-lg">local_fire_department</span>
+                    Popular
+                </button>
+<button class="flex shrink-0 items-center gap-2 rounded-full bg-background-light dark:bg-white/5 border border-gray-100 dark:border-white/10 px-5 py-2.5 text-sm font-semibold text-[#181111] dark:text-white">
+<span class="material-symbols-outlined text-lg text-primary">restaurant</span>
+                    Satay
+                </button>
+<button class="flex shrink-0 items-center gap-2 rounded-full bg-background-light dark:bg-white/5 border border-gray-100 dark:border-white/10 px-5 py-2.5 text-sm font-semibold text-[#181111] dark:text-white">
+<span class="material-symbols-outlined text-lg text-primary">ramen_dining</span>
+                    Soups
+                </button>
+<button class="flex shrink-0 items-center gap-2 rounded-full bg-background-light dark:bg-white/5 border border-gray-100 dark:border-white/10 px-5 py-2.5 text-sm font-semibold text-[#181111] dark:text-white">
+<span class="material-symbols-outlined text-lg text-primary">coffee</span>
+                    Drinks
+                </button>
+</div>
+</section>
+<!-- Signature Dishes -->
+<section class="px-6 py-10 bg-white dark:bg-background-dark">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h3 class="text-2xl font-extrabold text-[#181111] dark:text-white tracking-tight">Signature Dishes</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Our most loved authentic recipes</p>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1">
+                    See All <span class="material-symbols-outlined text-sm font-bold">arrow_outward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 @[480px]:grid-cols-2 gap-6">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col gap-4">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+<img alt="Sate Kambing Muda" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Traditional charcoal grilled lamb satay skewers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4c4L2oqUayi3ofQrDwUoGVP5yegjAVKMpOjjl0_ApayABoy6sg0cDGOlN9Izvd2SXa76wGTb9Ba4wzxaafAAt0YuDgJzuEt66QzZXuvVM7ZM5RV3EGn8o9xVDtvjK2w_4wDBB07W4oMHRWy19yypvbm-lyzBsHSGQ1JX2pbyiYHKBUejEERsG_fDQqOeUMaB1-Eo_3W2Ie_JA3J-KS8icWDJpBKczfc6KSHyx4YJyCM5vxZF5c1q497VpbDTq4RoNloW-74fPMws"/>
+<div class="absolute top-3 right-3 rounded-full bg-white/90 dark:bg-black/50 px-3 py-1 text-xs font-bold text-primary backdrop-blur-md">
+                            Best Seller
+                        </div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-bold text-[#181111] dark:text-white">Sate Kambing Muda</h4>
+<span class="text-primary font-bold">Rp 50k</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">
+                            Ultra-tender young goat meat marinated with heirloom spices and soy.
+                        </p>
+</div>
+<button class="absolute bottom-20 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col gap-4">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+<img alt="Sate Ayam Spesial" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Authentic Indonesian chicken satay with peanut sauce" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7ogQTOdW_ILKLdy1Firqj_NhUUVT2ZyY7fH-OPdsASIZhV4WA4pw93LTQOiCnxSBThs_w_dzy2b94KXcRMZEB185pK8HnhvVzqWILnAAwERhNCjfeCYICbLego-dg7t7jPQZo95BEXtdEgMUJXGtriggkvvQV4b6CV5y6aRh875zSHzWgbpCode4ps-MfzdrtGJFNNwLdV7F5apyunX9EVMhr2QawvTScqYPXLqGh2U_B_zSMWLK1fJx0DcgzSJfMHtyFPRQ2L2A"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-bold text-[#181111] dark:text-white">Sate Ayam Spesial</h4>
+<span class="text-primary font-bold">Rp 35k</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">
+                            Flame-grilled chicken breast glazed in aromatic Madura-style peanut sauce.
+                        </p>
+</div>
+<button class="absolute bottom-20 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex flex-col gap-4">
+<div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+<img alt="Gule Kambing" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Rich traditional goat soup gule kambing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF_qFRZg9Sf5YNUcZLygTBrpJOzRlhxNZMrbBmWUIeJW3pehOn0hnYibUeApR3L1b3n5VSHbaANqt1KMUNxwfc3ftcuAhA1clPlOoe7RKTb_8HhvuvzL1A5XeIygVdD9tlzMQq83Bntx-oRlHsx-63WCiYs8R19AwM71oHMj2krNLGqJz3p3VfOpFafrj6K65mrkKxQ3rcvlmi1bYUkDmeIVDYcOxbMskMw3uWAsKREZB71l43DO7WpsL_dJkJ66WW-aGdVSfKm8w"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<h4 class="text-lg font-bold text-[#181111] dark:text-white">Gule Kambing</h4>
+<span class="text-primary font-bold">Rp 45k</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-normal">
+                            Rich, slow-cooked traditional goat curry with turmeric and coconut milk.
+                        </p>
+</div>
+<button class="absolute bottom-20 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Visit Us Banner -->
+<section class="px-6 py-10 bg-background-light dark:bg-white/5">
+<div class="relative overflow-hidden rounded-3xl bg-primary px-8 py-10 text-white shadow-2xl shadow-primary/20">
+<div class="relative z-10 flex flex-col gap-6">
+<div>
+<h3 class="text-3xl font-extrabold tracking-tight">Visit Our Warung</h3>
+<p class="mt-2 text-white/80 max-w-xs">Experience the authentic atmosphere and the smell of fresh smoke at our local spots.</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white/60">location_on</span>
+<span class="text-sm font-medium">Jl. Raya Kaliwungu No. 42, Semarang</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white/60">schedule</span>
+<span class="text-sm font-medium">Open Daily: 10:00 - 22:00</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-primary font-bold active:scale-95 transition-all">
+                        Find Locations
+                        <span class="material-symbols-outlined text-lg">map</span>
+</button>
+</div>
+<!-- Abstract Design Elements -->
+<div class="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+<div class="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-white/5 blur-3xl"></div>
+<span class="material-symbols-outlined absolute top-4 right-4 text-[120px] text-white/10 select-none">outdoor_grill</span>
+</div>
+</section>
+<!-- Newsletter / Footer-lite -->
+<footer class="bg-white dark:bg-background-dark px-6 py-12 border-t border-gray-100 dark:border-white/10">
+<div class="flex flex-col items-center text-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl">restaurant_menu</span>
+<h2 class="text-2xl font-black tracking-tighter uppercase dark:text-white">MBAH BIYONG</h2>
+</div>
+<div class="flex gap-6">
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">
+                    © 2024 Warung Sate Mbah Biyong. <br/>
+                    Built for the love of tradition.
+                </p>
+</div>
+</footer>
+</main>
+<!-- Navigation Bar for Mobile iOS style -->
+<nav class="fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-8 rounded-full bg-[#181111]/90 dark:bg-white/10 px-8 py-4 backdrop-blur-xl border border-white/10 shadow-2xl">
+<button class="text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+</button>
+<button class="text-white/60">
+<span class="material-symbols-outlined">restaurant</span>
+</button>
+<button class="text-white/60">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="text-white/60">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+<!-- Placeholder for Map for data-location requirement -->
+<div class="hidden" data-location="Semarang, Indonesia" style=""></div>
+</body></html>
